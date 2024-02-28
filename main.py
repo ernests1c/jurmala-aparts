@@ -28,22 +28,58 @@ while True:
     choice = input("Enter your choice (1-6): ")
 
     if choice == '1':
+        apartments_seq = int(input("Which apartment would you like to see?"))
+        print(apartments[apartments_seq])
         # https://www.w3schools.com/python/python_lists_access.asp
         pass
     elif choice == '2':
+        def sorting(apartment):
+            return int(apartment[-1])
+        apartments.sort(key = sorting , reverse = True)
+        print(apartments[0:10])
+        
+
         # https://www.w3schools.com/python/python_lists_sort.asp
         pass
     elif choice == '3':
+        def sorting_2(apartmenter):
+            return int(apartmenter[-1])
+        apartments.sort(key = sorting_2)
+        print(apartments[0:10])
         # https://www.w3schools.com/python/python_lists_sort.asp
         pass
     elif choice == '4':
+            number = 0
+            apartments_hah = int(input("Under which price range would you like to search by?"))
+            def sorting_range(apartment_bro):
+                return int(apartment_bro[-1])
+            apartments.sort(key = sorting_range, reverse = True)
+            for element in apartments:
+                if int(element[-1])<=apartments_hah:
+                    if number<=20:
+                        print(element)
+                        number = number+1
+            
+
         # https://www.w3schools.com/python/python_lists_comprehension.asp
         # https://www.w3schools.com/python/python_lists_access.asp - Range of Indexes
-        pass
+        
     elif choice == '5':
+        numbers = 0
+        apartments_funny = int(input("Over which price range would you like to search by?"))
+        def sorting_apartment_high(apartment_omg):
+            return int(apartment_omg[-1])
+        apartments.sort(key = sorting_apartment_high)
+
+        list = []
+        for elements in apartments:
+            if int(elements[-1])>=apartments_funny:
+                list.append(elements)
+
         # https://www.w3schools.com/python/python_lists_comprehension.asp
         # https://www.w3schools.com/python/python_lists_access.asp - Range of Indexes
-        pass
+        for x in list[:20]:
+            print(x)
 
     elif choice == '6':
         # 
@@ -54,6 +90,4 @@ while True:
     else:
         print("Invalid choice, choose from 1 to 7")
 
-    print("==========================")
-
-
+    print("===========================")
